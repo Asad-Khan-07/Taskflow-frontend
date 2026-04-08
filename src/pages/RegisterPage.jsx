@@ -15,7 +15,7 @@ export default function RegisterPage() {
     try {
       await register(form);
       toast.success('Account created! Welcome 🎉');
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       toast.error(err.message);
     }
