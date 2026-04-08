@@ -16,6 +16,32 @@ const BG_LABELS = [
   'Ocean', 'Obsidian', 'Grape', 'Teal',
 ];
 
+// SVG Waving Hand
+const WavingHandSVG = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    width="36"
+    height="36"
+    fill="none"
+    style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '8px' }}
+  >
+    {/* Palm */}
+    <rect x="18" y="20" width="10" height="28" rx="5" fill="#FBBF24" />
+    {/* Index finger */}
+    <rect x="30" y="14" width="8" height="22" rx="4" fill="#FBBF24" />
+    {/* Middle finger */}
+    <rect x="40" y="16" width="8" height="20" rx="4" fill="#FBBF24" />
+    {/* Thumb */}
+    <rect x="10" y="28" width="10" height="8" rx="4" fill="#FBBF24" transform="rotate(-20 10 28)" />
+    {/* Ring finger */}
+    <rect x="30" y="38" width="8" height="14" rx="4" fill="#FBBF24" />
+    {/* Wave lines */}
+    <path d="M54 10 Q58 14 54 18" stroke="#FCD34D" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+    <path d="M58 6 Q64 12 58 18" stroke="#FCD34D" strokeWidth="2" strokeLinecap="round" fill="none" />
+  </svg>
+);
+
 export default function DashboardPage() {
   const { boards, fetchBoards, createBoard, deleteBoard, loading } = useBoardStore();
   const { user } = useAuthStore();
@@ -62,8 +88,9 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="font-display text-3xl font-bold text-white">
-              Hey, {user?.name?.split(' ')[0]} 👋
+            <h1 className="font-display text-3xl font-bold text-white flex items-center">
+              Hey, {user?.name?.split(' ')[0]}
+              <WavingHandSVG />
             </h1>
             <p className="text-slate-400 mt-1 font-body">Manage your boards and projects</p>
           </div>
