@@ -15,7 +15,7 @@ export default function LoginPage() {
     try {
       await login(form);
       toast.success('Welcome back!');
-      navigate('/dashboard');
+      navigate('/');
     } catch (err) {
       toast.error(err.message);
     }
