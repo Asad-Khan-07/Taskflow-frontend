@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import BoardPage from './pages/BoardPage';
+import LandingPage from './pages/LandingPage';
 
 const ProtectedRoute = ({ children }) => {
   const { token } = useAuthStore();
