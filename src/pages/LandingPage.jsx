@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Zap, LayoutDashboard, CheckSquare, RefreshCw, Layers, Shield, Activity } from 'lucide-react';
+import { Zap, LayoutDashboard, CheckSquare, RefreshCw, Layers, Shield, Activity, ArrowRight, Copyright } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-// ─── Reusable scroll-triggered section wrapper ────────────────────────
 function FadeInSection({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
@@ -20,7 +19,6 @@ function FadeInSection({ children, delay = 0, className = '' }) {
   );
 }
 
-// ─── Stagger container for cards ─────────────────────────────────────
 function StaggerGrid({ children, className = '' }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
@@ -273,10 +271,10 @@ export default function LandingPage() {
               </motion.div>
               {i < steps.length - 1 && (
                 <motion.div
-                  className="text-slate-700 text-2xl hidden sm:block"
+                  className="text-slate-700 hidden sm:flex items-center"
                   variants={cardVariants}
                 >
-                  →
+                  <ArrowRight size={20} />
                 </motion.div>
               )}
             </motion.div>
@@ -287,7 +285,7 @@ export default function LandingPage() {
       {/* ── CTA ── */}
       <section className="px-6 py-20 text-center bg-[#080b14] border-t border-white/[0.06]">
         <FadeInSection>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-50 mb-4">Ready to get started?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-50 mb-4">Ready to get started? </h2>
           <p className="text-slate-400 text-base mb-8">Join thousands of teams already using TaskFlow.</p>
           <Link to="/register">
             <motion.button
@@ -314,7 +312,7 @@ export default function LandingPage() {
           <div className="w-7 h-7 bg-blue-500 rounded-lg flex items-center justify-center">
             <Zap size={14} className="text-white" />
           </div>
-          <span className="text-sm text-slate-500">© 2026 TaskFlow. All rights reserved.</span>
+          <span className="text-sm text-slate-500 flex  items-center gap-1"><Copyright size={15}/> 2026 TaskFlow. All rights reserved.</span>
         </div>
         <div className="flex gap-5">
           {['Privacy', 'Terms', 'Contact'].map(l => (
