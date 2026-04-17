@@ -125,7 +125,7 @@ export default function BoardPage() {
 
         {/* Board toolbar */}
         <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10 bg-black/20 backdrop-blur-sm">
-          <button onClick={() => navigate('/')} className="btn-ghost flex items-center gap-1.5 text-sm py-1.5 px-3">
+          <button onClick={() => navigate('/dashboard')} className="btn-ghost flex items-center gap-1.5 text-sm py-1.5 px-3">
             <ArrowLeft size={15} /> Boards
           </button>
           <span className="w-px h-5 bg-white/10" />
